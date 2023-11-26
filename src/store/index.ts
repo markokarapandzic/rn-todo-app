@@ -14,10 +14,8 @@ import {
 import { MMKV } from 'react-native-mmkv';
 
 import { api } from '../services/api';
-import theme from './theme';
 
 const reducers = combineReducers({
-  theme,
   [api.reducerPath]: api.reducer,
 });
 

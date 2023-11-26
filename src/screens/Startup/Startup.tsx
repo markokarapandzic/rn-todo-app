@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { useTheme } from '../../hooks';
-import { Brand } from '../../components';
 import { ApplicationScreenProps } from '../../../@types/navigation';
 
 const Startup = ({ navigation }: ApplicationScreenProps) => {
-  const { Layout, Gutters } = useTheme();
-
   const init = async () => {
     await new Promise(resolve =>
       setTimeout(() => {
@@ -24,9 +20,8 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
   }, []);
 
   return (
-    <View style={[Layout.fill, Layout.colCenter]}>
-      <Brand />
-      <ActivityIndicator size={'large'} style={[Gutters.largeVMargin]} />
+    <View>
+      <ActivityIndicator size={'large'} />
     </View>
   );
 };
