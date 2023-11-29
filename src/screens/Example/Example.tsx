@@ -1,8 +1,10 @@
+import React, { FC } from 'react';
+import { View, Text, FlatList } from 'react-native';
 import { useTheme } from '@rneui/themed';
-import React from 'react';
-import { View, Text } from 'react-native';
+import { todos } from '@/mock/todo';
+import { TodoItem } from '@/components/TodoItem';
 
-const Example = () => {
+const Example: FC = () => {
   const { theme } = useTheme();
 
   return (
@@ -10,6 +12,11 @@ const Example = () => {
       <Text style={[theme.fonts.textMedium, { color: theme.colors.primary }]}>
         Example Screen
       </Text>
+      <FlatList
+        data={todos}
+        renderItem={todo => <TodoItem todo={todo} />}
+        keyExtractor={todo => todo.name}
+      />
     </View>
   );
 };
