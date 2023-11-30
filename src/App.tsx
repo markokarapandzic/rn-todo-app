@@ -6,7 +6,7 @@ import { store, persistor } from './store';
 import ApplicationNavigator from './navigators/Application';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from '@rneui/themed';
-import { theme } from './themeRefactor';
+import { theme } from './theme';
 
 const App = () => (
   <SafeAreaProvider>

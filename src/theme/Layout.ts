@@ -1,133 +1,107 @@
-import { StyleSheet } from 'react-native';
-import { ThemeVariables } from '../../@types/theme';
+import { TextStyle, ViewStyle } from 'react-native';
+import { gutters } from './gutters';
 
-export default function ({}: ThemeVariables) {
-  return StyleSheet.create({
-    /* Column Layouts */
-    col: {
-      flexDirection: 'column',
-    },
-    colReverse: {
-      flexDirection: 'column-reverse',
-    },
-    colCenter: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    colVCenter: {
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    colHCenter: {
-      flexDirection: 'column',
-      justifyContent: 'center',
-    },
-    /* Row Layouts */
-    row: {
-      flexDirection: 'row',
-    },
-    rowReverse: {
-      flexDirection: 'row-reverse',
-    },
-    rowCenter: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    rowVCenter: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-    },
-    rowHCenter: {
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    /* Default Layouts */
-    center: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    alignItemsCenter: {
-      alignItems: 'center',
-    },
-    alignItemsStart: {
-      alignItems: 'flex-start',
-    },
-    alignItemsStretch: {
-      alignItems: 'stretch',
-    },
-    alignItemsEnd: {
-      alignItems: 'flex-end',
-    },
-    justifyContentCenter: {
-      justifyContent: 'center',
-    },
-    justifyContentAround: {
-      justifyContent: 'space-around',
-    },
-    justifyContentBetween: {
-      justifyContent: 'space-between',
-    },
-    justifyContentEnd: {
-      justifyContent: 'flex-end',
-    },
-    scrollSpaceAround: {
-      flexGrow: 1,
-      justifyContent: 'space-around',
-    },
-    scrollSpaceBetween: {
-      flexGrow: 1,
-      justifyContent: 'space-between',
-    },
-    selfStretch: {
-      alignSelf: 'stretch',
-    },
-    /* Sizes Layouts */
-    fill: {
-      flex: 1,
-    },
-    fullSize: {
-      height: '100%',
-      width: '100%',
-    },
-    fullWidth: {
-      width: '100%',
-    },
-    halfWidth: {
-      width: '50%',
-    },
-    fullHeight: {
-      height: '100%',
-    },
-    /* Operation Layout */
-    mirror: {
-      transform: [{ scaleX: -1 }],
-    },
-    rotate90: {
-      transform: [{ rotate: '90deg' }],
-    },
-    rotate90Inverse: {
-      transform: [{ rotate: '-90deg' }],
-    },
-    // Position
-    relative: {
-      position: 'relative',
-    },
-    absolute: {
-      position: 'absolute',
-    },
-    top0: {
-      top: 0,
-    },
-    bottom0: {
-      bottom: 0,
-    },
-    left0: {
-      left: 0,
-    },
-    right0: {
-      right: 0,
-    },
-  });
-}
+export type UtilityStyles = {
+  fill: ViewStyle;
+  flex: ViewStyle;
+  screenContainer: ViewStyle;
+  flexRow: ViewStyle;
+  flexColumn: ViewStyle;
+  justifyCenter: ViewStyle;
+  justifyBetween: ViewStyle;
+  justifyAround: ViewStyle;
+  justifyEvenly: ViewStyle;
+  alignCenter: ViewStyle;
+  alignStart: ViewStyle;
+  alignEnd: ViewStyle;
+  fullWidth: ViewStyle;
+  m1: ViewStyle;
+  m2: ViewStyle;
+  m3: ViewStyle;
+  m4: ViewStyle;
+  m5: ViewStyle;
+  p1: ViewStyle;
+  p2: ViewStyle;
+  p3: ViewStyle;
+  p4: ViewStyle;
+  p5: ViewStyle;
+};
+
+export const layout: UtilityStyles = {
+  fill: {
+    display: 'flex',
+    flex: 1,
+  },
+  flex: {
+    display: 'flex',
+  },
+  screenContainer: {
+    display: 'flex',
+    flex: 1,
+    padding: gutters.sm,
+  },
+  flexRow: {
+    flexDirection: 'row',
+  },
+  flexColumn: {
+    flexDirection: 'column',
+  },
+  justifyCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  justifyBetween: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  justifyAround: {
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  justifyEvenly: {
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  alignCenter: {
+    alignItems: 'center',
+  },
+  alignStart: {
+    alignItems: 'flex-start',
+  },
+  alignEnd: {
+    alignItems: 'flex-end',
+  },
+  fullWidth: {
+    width: '100%',
+  },
+  m1: {
+    margin: gutters.xs,
+  },
+  m2: {
+    margin: gutters.sm,
+  },
+  m3: {
+    margin: gutters.md,
+  },
+  m4: {
+    margin: gutters.lg,
+  },
+  m5: {
+    margin: gutters.xs,
+  },
+  p1: {
+    padding: gutters.xs,
+  },
+  p2: {
+    padding: gutters.sm,
+  },
+  p3: {
+    padding: gutters.md,
+  },
+  p4: {
+    padding: gutters.lg,
+  },
+  p5: {
+    padding: gutters.xl,
+  },
+};
