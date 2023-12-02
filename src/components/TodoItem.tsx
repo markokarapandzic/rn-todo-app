@@ -10,7 +10,7 @@ type TodoItemProps = {
 
 export const TodoItem: FC<TodoItemProps> = ({ todo }) => {
   const {
-    theme: { colors },
+    theme: { colors, styles },
   } = useTheme();
 
   const todoIcon = useMemo(
@@ -25,6 +25,10 @@ export const TodoItem: FC<TodoItemProps> = ({ todo }) => {
 
   function onTodoCompleteToggle() {
     console.log('Toggle Todo:', todo.name);
+  }
+
+  function onEditTodo() {
+    console.log('Edit Todo:', todo.name);
   }
 
   const handleRightContent = useCallback(
@@ -43,10 +47,12 @@ export const TodoItem: FC<TodoItemProps> = ({ todo }) => {
       <TouchableOpacity onPress={onTodoCompleteToggle}>
         {todoIcon}
       </TouchableOpacity>
-      <ListItem.Content>
-        <ListItem.Title>{todo.name}</ListItem.Title>
-        <ListItem.Subtitle>{todo.description}</ListItem.Subtitle>
-      </ListItem.Content>
+      <TouchableOpacity style={styles.fill} onPress={onEditTodo}>
+        <ListItem.Content>
+          <ListItem.Title>{todo.name}</ListItem.Title>
+          <ListItem.Subtitle>{todo.description}</ListItem.Subtitle>
+        </ListItem.Content>
+      </TouchableOpacity>
       <ListItem.Chevron />
     </ListItem.Swipeable>
   );

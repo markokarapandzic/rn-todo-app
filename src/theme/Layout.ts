@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 import { gutters } from './gutters';
 
 export type UtilityStyles = {
